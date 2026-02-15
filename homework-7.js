@@ -39,13 +39,13 @@ console.log("Комментарии в обратном порядке:", revers
 // 1. Создаем новый массив 'comComments'
 // 2. Метод filter проходит по каждому объекту (comment)
 // 3. Условие: если email содержит ".com", объект попадает в новый массив
-const comComments = socialComments.filter((comment) => {
+const filteredCommentsByCom = socialComments.filter((comment) => {
     return comment.email.includes(".com");
 });
 
 // Выводим результат в консоль
 console.log("Комментарии, почта которых содержит .com:");
-console.log(comComments);
+console.log(filteredCommentsByCom);
 
 // --- ЗАДАНИЕ 8: Изменение postId ---
 
@@ -74,7 +74,7 @@ const shortComments = socialComments.map((comment) => {
   };
 });
 
-console.log("Краткий список (задание 9):", shortComments);
+console.log("Краткий список",shortComments);
 
 // --- ЗАДАНИЕ 10: Проверка длины сообщения ---
 
@@ -95,7 +95,7 @@ const validatedComments = socialComments.map((comment) => {
 console.log("Результат проверки длины:", validatedComments);
 
 // --- ЗАДАНИЕ 11: Сложное условие ---
-// Самый лаконичный способ
+
 const emailsViaMap = socialComments.map(comment => comment.email);
 
 console.log("Emails (через map):", emailsViaMap);
@@ -117,12 +117,10 @@ const emails = socialComments.map(comment => comment.email);
 const stringFromToString = emails.toString();
 console.log("1. Результат toString():", stringFromToString);
 
-
 // 2. Использование метода .join()
 // задал свой разделитель запятая + пробел.
 const stringFromJoin = emails.join(", ");
 console.log("2. Результат join():", stringFromJoin);
-
 
 // 3. Ручной перебор массива (через цикл или forEach)
 let stringFromLoop = "";
@@ -135,5 +133,4 @@ emails.forEach((email, index) => {
     stringFromLoop += " | "; // Используем вертикальную черту для разнообразия
   }
 });
-
 console.log("3. Результат ручного перебора:", stringFromLoop);
